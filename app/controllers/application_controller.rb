@@ -7,10 +7,15 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if !session[:order_id].nil?
-      Order.find(session[:order_id])
-    else
-      Order.new
+      cur_order = Order.find_by(id: session[:order_id])
     end
+
+    if cur_order.blank?
+      cur_order = Order.new
+      #if user_signed_in then order.user = current_user... order.save
+    end
+
+    return cur_order
   end
 
   protected
