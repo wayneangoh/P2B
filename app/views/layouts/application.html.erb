@@ -1,3 +1,4 @@
+<p class="notice"><%= notice %></p>
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,6 +24,13 @@
       <div class="col-xs-6">
         <h1><%= link_to "My Store", root_path %></h1>
       </div>
+      <div><% if user_signed_in? %>
+      <div class="col-xs-5 text-right"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a></div>
+      <% else %>
+      <div class="col-xs-5 text-right"><%= link_to 'Sign Up', new_user_registration_path %></div>
+      <div class="col-xs-5 text-right"><%= link_to "Sign In", new_user_session_path %></div>
+      <% end %>
+    </div>
       <div class="col-xs-6 text-right">
         <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
       </div>
