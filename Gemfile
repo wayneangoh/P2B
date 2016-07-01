@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'devise'
+gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
+gem 'devise-bootstrap-views'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

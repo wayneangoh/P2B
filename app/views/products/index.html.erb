@@ -1,6 +1,13 @@
 <h1>Products</h1>
 
 <h3 class="text-center">Products for Sale</h3>
+<form class="searchform center has-feedback" action="<%= root_path %>" method="get" >
+
+  <%= text_field_tag :search, params[:search], class: "searchfield", placeholder: "Search and enter" %>
+  <span class="searchicon">
+    <span class="glyphicon glyphicon-search"></span>
+  </span>
+</form>
 
 <div class="row">
   <div class="col-xs-6 col-xs-offset-3">
